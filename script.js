@@ -13,7 +13,23 @@ document.querySelector("#pbot").addEventListener("click", function(dets){
         makeBubble();
         getNewHit();
     }
+    else{
+        if(score === 0){
+            makeBubble();
+            getNewHit();
+        }
+        else{
+            decreaseScore();
+            makeBubble();
+            getNewHit();
+        }
+    }
 });
+
+function decreaseScore(){
+    score -=10;
+    document.querySelector("#scrval").textContent = score;
+}
 
 function increaseScore(){
     score += 10;
